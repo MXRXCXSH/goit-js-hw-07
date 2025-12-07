@@ -58,3 +58,23 @@ const elements = images.map(image => {
 galerryList.append(...elements);
 
 // ==============================================================================
+
+// const ListOfImages = images
+//   .map(image => {
+//     const img = Object.entries(image)
+//       .map(([key, value]) => {
+//         if (key === 'url') {
+//           return `src="${value}"`;
+//         } else {
+//           return `alt="${value}"`;
+//         }
+//       })
+//       .join(' ');
+//     console.log(img);
+
+//     return `<li><img class="img-container" ${img} width = '900'></li>`;
+//   })
+
+//   .join('');
+
+// galerryList.insertAdjacentHTML('beforeend', ListOfImages);
