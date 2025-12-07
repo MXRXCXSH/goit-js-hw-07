@@ -28,40 +28,33 @@ const galerryList = document.querySelector('.gallery');
 
 // ===========================================================================
 
-const fragmentEl = document.createDocumentFragment();
-images.forEach(image => {
-  const li = document.createElement('li');
-  const img = document.createElement('img');
-  img.src = image.url;
-  img.alt = image.alt;
-  li.append(img);
-  fragmentEl.append(li);
-  img.getAttribute('width');
-  img.setAttribute('width', 900);
-  img.classList.add('img-container');
-});
-galerryList.append(fragmentEl);
-
-// ===========================================================================
-
-// const elements = images.map(image => {
+// const fragmentEl = document.createDocumentFragment();
+// images.forEach(image => {
 //   const li = document.createElement('li');
 //   const img = document.createElement('img');
 //   img.src = image.url;
 //   img.alt = image.alt;
 //   li.append(img);
+//   fragmentEl.append(li);
 //   img.getAttribute('width');
 //   img.setAttribute('width', 900);
 //   img.classList.add('img-container');
-//   return li;
 // });
-// galerryList.append(...elements);
+// galerryList.append(fragmentEl);
+
+// ===========================================================================
+
+const elements = images.map(image => {
+  const li = document.createElement('li');
+  const img = document.createElement('img');
+  img.src = image.url;
+  img.alt = image.alt;
+  li.append(img);
+  img.getAttribute('width');
+  img.setAttribute('width', 900);
+  img.classList.add('img-container');
+  return li;
+});
+galerryList.append(...elements);
 
 // ==============================================================================
-
-const imgstyle = document.querySelectorAll('.img-container');
-imgstyle.forEach(img => {
-  img.style.display = 'block';
-  img.style.maxWidth = '100%';
-  img.style.margin = '0 auto';
-});
